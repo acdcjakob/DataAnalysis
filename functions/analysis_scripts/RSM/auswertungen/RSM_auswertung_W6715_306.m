@@ -34,6 +34,7 @@ q_Al2O3_exp_306 = [4.5882 ; 7.2929];
     q_Cr2O3_exp_306 = [4.3830 ; 6.9800];
     [x,y] = correctReciprocalData(q_Cr2O3_exp_306(1),q_Cr2O3_exp_306(2),q_Al2O3_lit_306,q_Al2O3_exp_306);
     q_Cr2O3_cor_306 = [x,y];
+    
 q_Al2O3_exp_300 = [0.0270 ; 7.2686];
     q_Cr2O3_exp_300 = [0.0896 ; 6.9181];
     [x,y] = correctReciprocalData(q_Cr2O3_exp_300(1),q_Cr2O3_exp_300(2),q_Al2O3_lit_300,q_Al2O3_exp_300);
