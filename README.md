@@ -1,4 +1,4 @@
 # Methods
 ## RSM analysis
 
-Check out [doc][documentation/RSM]
+Check out [doc](documentation/RSM.md)
