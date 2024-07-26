@@ -1,0 +1,15 @@
+Sample,Plane,InPlane,OutOfPlane,Meaning
+W6715,4-20,4.926,4.998,perp to c
+W6715,306,13.598,4.968,parallel to c
+W6716,4-20,4.941,4.976,perp to c
+W6716,306,13.685,4.951,parallel to c
+W6725,4-20,4.932,4.992,perp to c
+W6725,306,13.614,4.965,parallel to c
+W6902m,4-20,4.940,4.967,perp to c
+W6902m,306,13.764,4.934,parallel to c
+W6905m,4-20,4.915,4.999,perp to c
+W6905m,306,13.236,5.033,parallel to c
+W6902a,300,4.888,4.957,perp to c
+W6902a,226,13.508,4.972,parallel to c
+W6905a,300,4.846,5.016,perp to c
+W6905a,226,13.281,5.031,parallel to c
