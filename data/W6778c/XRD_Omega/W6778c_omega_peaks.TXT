@@ -1,0 +1,2 @@
+No.	Label	Pos. [記mega]	FWHM Left [記mega]	Area [cts*記mega]	Backgr.[cts]	d-spacing [魔	Height [cts]	Shape Left	Status	Integral Breadth [記mega]	FWHM Right [記mega]	Shape Right	Obs. Lorentz B [記mega]	Obs. Gauss B [記mega]	Instr. Lorentz B [記mega]	Instr. Gauss B [記mega]	Crystallite Size [魔	Micro Strain [%]	Crystallite Size only [魔	Micro Strain only [%]
+1	Cr2O3 0 0 6	19,5303(2)	0,408(2)	5385,43	562,04	 	8407(55)	1,00(1)	Included	0,640582	 	 	0,637576	0,010818	0,075229	0,063728	159,274300	-0,159223	159,269300	1,425758

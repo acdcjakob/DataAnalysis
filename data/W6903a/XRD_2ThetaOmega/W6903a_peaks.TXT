@@ -1,0 +1,3 @@
+No.	Label	Pos. [°2Th.]	FWHM Left [°2Th.]	Area [cts*°2Th.]	Backgr.[cts]	d-spacing [Å]	Height [cts]	Shape Left	Status	Integral Breadth [°2Th.]	FWHM Right [°2Th.]	Shape Right	Obs. Lorentz B [°2Th.]	Obs. Gauss B [°2Th.]	Instr. Lorentz B [°2Th.]	Instr. Gauss B [°2Th.]	Crystallite Size [Å]	Micro Strain [%]	Crystallite Size only [Å]	Micro Strain only [%]
+1	Cr2O3 1 1 0	35,5327(1)	0,1653(4)	4289,10	240,02	2,52445	19441(37)	0,628(3)	Included	0,220620	 	 	0,146492	0,113996	0,073959	0,062655	1277,909000	0,129685	632,416500	0,199587
+2	Al2O3 1 1 0	37,67312(1)	0,04731(3)	17383,84	281,44	2,38579	305845(194)	0,3534(9)	Included	0,056839	 	 	0,022196	0,041553	0,073931	0,062631	-1802,739000	-0,059938	29489,580000	0,004045

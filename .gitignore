@@ -1,4 +1,7 @@
-data/
+# ignore large data
+*.BAK
+*.mat
+*.xrdml
 
 .archive/
 

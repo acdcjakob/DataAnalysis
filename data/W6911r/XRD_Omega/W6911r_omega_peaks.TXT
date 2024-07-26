@@ -1,0 +1,2 @@
+No.	Pos. [記mega]	FWHM Left [記mega]	Area [cts*記mega]	Backgr.[cts]	d-spacing [魔	Height [cts]	Shape Left	Status	Integral Breadth [記mega]	FWHM Right [記mega]	Shape Right	Obs. Lorentz B [記mega]	Obs. Gauss B [記mega]	Instr. Lorentz B [記mega]	Instr. Gauss B [記mega]	Crystallite Size [魔	Micro Strain [%]	Crystallite Size only [魔	Micro Strain only [%]
+1	24,8725(9)	0,896(2)	916,39	51,51	 	881(2)	0,257(5)	Included	1,040438	 	 	0,300538	0,836788	0,074611	0,063205	400,087400	1,650928	91,875270	1,946614

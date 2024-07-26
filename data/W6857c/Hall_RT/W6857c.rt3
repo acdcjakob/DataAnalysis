@@ -1,0 +1,22 @@
+
+year	month	day	time
+2024      	6         	10        	14        	54        	56        
+current (A)	current (Imax)	Imax (A)	magnetic field (T)	thickness (micrometers)	comment	Resistance Mode	t_int	version	file name	Hall mode	ACDC mode	freq
+7.57693e-008	0.9	8.41881e-008	0.43	1	odn	High Resistance Mode	2 ms	Hall_V12c	C:\Daten\Hallmessungen\W6857c.rt3	ZeroB	DC	0
+T (K)	T_set (K)	rho (Ohm m)	err_rho (Ohm m)	RH (m^3/As)	err_RH (m^3/As)	n (cm^-3)	err_n (cm^-3)	mu (cm^2/Vs)	err_mu (cm^2/Vs)	vdP function	error flag	U_rho1	U_rho2	U_RH1	U_RH2	err_U_rho1	err_U_rho2	err_U_RH1	err_U_RH2
+300       	0         	30.7357   	24.5768   							0.999988  	1001100	-0.516837 	-0.510817 			0.0250259 	0.562494  		
+300       	0         	34.5341   	31.9133   							0.999301  	701100	-0.60365  	-0.551798 			0.467886  	0.49705   		
+NaN       	0         	30.3223   	22.857    							0.998889  	301100	-0.47876  	-0.536187 			0.560559  	0.0379805 		
+NaN       	0         	31.5213   	4.96434   							0.999846  	1601100	-0.538131 	-0.515941 			0.0831821 	0.0741708 		
+NaN       	0         	31.5072   	0.306     																
+
+year	month	day	time
+2024      	6         	10        	14        	56        	58        
+current (A)	current (Imax)	Imax (A)	magnetic field (T)	thickness (micrometers)	comment	Resistance Mode	t_int	version	file name	Hall mode	ACDC mode	freq
+4.2095e-008	0.5	8.41881e-008	0.43	1	odn	High Resistance Mode	2 ms	Hall_V12c	C:\Daten\Hallmessungen\W6857c.rt3	ZeroB	DC	0
+T (K)	T_set (K)	rho (Ohm m)	err_rho (Ohm m)	RH (m^3/As)	err_RH (m^3/As)	n (cm^-3)	err_n (cm^-3)	mu (cm^2/Vs)	err_mu (cm^2/Vs)	vdP function	error flag	U_rho1	U_rho2	U_RH1	U_RH2	err_U_rho1	err_U_rho2	err_U_RH1	err_U_RH2
+300       	0         	32.0851   	38.0909   							0.999531  	1001100	-0.287168 	-0.309102 			0.025083  	0.630306  		
+300       	0         	31.6709   	59.7897   							0.998685  	701100	-0.312668 	-0.276403 			0.489816  	0.517406  		
+NaN       	0         	31.7391   	37.7355   							0.999883  	301100	-0.289404 	-0.30023  			0.605137  	0.0379361 		
+NaN       	0         	31.5487   	9.69148   							0.999838  	1601100	-0.299393 	-0.286729 			0.0818527 	0.0737264 		
+NaN       	0         	31.5923   	0.0743849 																
