@@ -1,6 +1,4 @@
 function [qx_cor,qy_cor,parameters] = correctReciprocalData(qx,qy,peak_lit,peak_exp)
-%CORRECTRECIPROCALDATA Summary of this function goes here
-%   Detailed explanation goes here
 
 % ----- function handles -----
 R_fh = ...
