@@ -1,0 +1,22 @@
+
+year	month	day	time
+2024      	6         	10        	15        	23        	4         
+current (A)	current (Imax)	Imax (A)	magnetic field (T)	thickness (micrometers)	comment	Resistance Mode	t_int	version	file name	Hall mode	ACDC mode	freq
+1.88676e-005	0.9	2.0964e-005	0.43	1	odn	High Resistance Mode	2 ms	Hall_V12c	C:\Daten\Hallmessungen\W6856c.rt3	ZeroB	DC	0
+T (K)	T_set (K)	rho (Ohm m)	err_rho (Ohm m)	RH (m^3/As)	err_RH (m^3/As)	n (cm^-3)	err_n (cm^-3)	mu (cm^2/Vs)	err_mu (cm^2/Vs)	vdP function	error flag	U_rho1	U_rho2	U_RH1	U_RH2	err_U_rho1	err_U_rho2	err_U_RH1	err_U_RH2
+300       	0         	0.266777  	0.00400903							0.999903  	101100	-1.12921  	-1.09211  			0.0160452 	0.016798  		
+300       	0         	0.268429  	0.00331639							0.999824  	101100	-1.09243  	-1.14282  			0.0131397 	0.0139306 		
+NaN       	0         	0.269018  	0.00404488							0.999852  	101100	-1.14321  	-1.09689  			0.0168316 	0.0162196 		
+NaN       	0         	0.267648  	0.00338543							0.999918  	101100	-1.09705  	-1.13149  			0.0133535 	0.0144098 		
+NaN       	0         	0.267981  	0.000450764																
+
+year	month	day	time
+2024      	6         	10        	15        	25        	2         
+current (A)	current (Imax)	Imax (A)	magnetic field (T)	thickness (micrometers)	comment	Resistance Mode	t_int	version	file name	Hall mode	ACDC mode	freq
+1.048e-005	0.5	2.0964e-005	0.43	1	odn	High Resistance Mode	2 ms	Hall_V12c	C:\Daten\Hallmessungen\W6856c.rt3	ZeroB	DC	0
+T (K)	T_set (K)	rho (Ohm m)	err_rho (Ohm m)	RH (m^3/As)	err_RH (m^3/As)	n (cm^-3)	err_n (cm^-3)	mu (cm^2/Vs)	err_mu (cm^2/Vs)	vdP function	error flag	U_rho1	U_rho2	U_RH1	U_RH2	err_U_rho1	err_U_rho2	err_U_RH1	err_U_RH2
+300       	0         	0.268758  	0.00733128							0.999872  	101100	-0.633475 	-0.609561 			0.0166574 	0.0165286 		
+300       	0         	0.269956  	0.00613174							0.999822  	101100	-0.610172 	-0.638466 			0.0135601 	0.0141344 		
+NaN       	0         	0.2705    	0.00735705							0.999841  	101100	-0.638965 	-0.612168 			0.0173477 	0.0159096 		
+NaN       	0         	0.26944   	0.00628157							0.999875  	101100	-0.611244 	-0.634941 			0.014168  	0.0142656 		
+NaN       	0         	0.269671  	0.00034472																

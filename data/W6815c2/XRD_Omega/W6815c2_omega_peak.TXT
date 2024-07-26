@@ -1,0 +1,2 @@
+No.	Label	Pos. [記mega]	FWHM Left [記mega]	Area calc.	Assignment	h	k	l	Multiplicity	F obs.	F calc.	Area [cts*記mega]	Derivation	Backgr.[cts]	d-spacing [魔	Height [cts]	K-A2 / K-A1 Ratio	Matched	Matched by	Rel. Int. [%]	Source	Status	Integral Breadth [記mega]
+1	Cr2O3 0 0 6	19,3123(8)	0,52(5)	0,00	 	 	 	 	 	0,000000	0,000000	753,84	 	259,71	 	923(108)	 	False	 	100,00	Profile fitting	Included	0,816653

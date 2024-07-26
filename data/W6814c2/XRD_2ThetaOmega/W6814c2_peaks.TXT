@@ -1,0 +1,5 @@
+No.	Label	Pos. [°2Th.]	FWHM Left [°2Th.]	Area calc.	Assignment	h	k	l	Multiplicity	F obs.	F calc.	Area [cts*°2Th.]	Derivation	Backgr.[cts]	d-spacing [Å]	Height [cts]	K-A2 / K-A1 Ratio	Matched	Matched by	Rel. Int. [%]	Source	Status	Integral Breadth [°2Th.]
+1	Cr2O3 0 0 6	39,5130(8)	0,262(3)	0,00	 	 	 	 	 	0,000000	0,000000	184,24	Pure KA1	1,51	2,27883	495(5)	0,500	False	 	6,80	Profile fitting	Included	0,372397
+2	Al2O3 0 0 6	41,61192(8)	0,0518(2)	0,00	 	 	 	 	 	0,000000	0,000000	405,13	Pure KA1	18,37	2,16861	6733(26)	0,500	False	 	92,59	Profile fitting	Included	0,060174
+3	Cr2O3 0 0 12	85,221(4)	0,59(1)	0,00	 	 	 	 	 	0,000000	0,000000	65,67	Pure KA1	12,59	1,13779	71(3)	0,500	False	 	0,98	Profile fitting	Included	0,924447
+4	Al2O3 0 0 12	90,6756(2)	0,0741(4)	0,00	 	 	 	 	 	0,000000	0,000000	703,01	Pure KA1	16,22	1,08300	7271(28)	0,500	False	 	100,00	Profile fitting	Included	0,096683
