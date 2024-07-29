@@ -35,3 +35,34 @@ Modular Stages
         - **output** vectors of substrate, vectors of thin film
     - with the data, the tilt can be calculated and then the lattice constants, depending on orientation
 
+## Fix
+
+`W6902m` $\rightarrow$ passt
+- new function gives: `0.4967    1.3538    0.4966    0.4943`
+- old 306 gives: `out: 0.4967` `in: 1.3538`
+- old 220 gives: `out: 0.4967` `in: 0.4940`
+
+`W6902a` $\rightarrow$ problem
+- new function gives: `0.4970    1.3530    0.4289    0.4243`
+- old 226 gives: `out: 0.4974` `in: 1.3486`
+- old 300 gives: `out: 0.4957` `in: 0.4888`
+
+### Check `226`
+coordinates:
+- `4.4418 ; 8.0451` from new function
+- `4.4418 ; 8.0451` from old function
+- $\rightarrow$ calculation of lattice is the problem
+
+Psi:
+- `-8.9266e-04` for old function
+- `8.9266e-04` for new function
+- $\rightarrow$ fix sign of $\Psi$
+- this fixes c-Par planes
+
+### Check `300`
+coordinates:
+- `4.0921 ; 6.9886` for new fumction
+- `3.5438 ; 6.0523` for old function
+- $\rightarrow$ there is the problem
+
+Literature values were wrong. This fixes the problem.
