@@ -71,14 +71,14 @@ elseif strcmp(IdTable.Sub,"a-Al2O3")
     
     % correct tilt
     % c parallel
-    Psi = 1*(cor{1}(2)-cor{2}(2))/(cor{1}(1)-cor{2}(1));
+    Psi = -1*(cor{1}(2)-cor{2}(2))/(cor{1}(1)-cor{2}(1));
     filmOut = sin(Psi)*cor{1}(1)+cos(Psi)*cor{1}(2);
     filmIn = cos(Psi)*cor{1}(1)-sin(Psi)*cor{1}(2);
     lattice_out_cPar = 4 / filmOut;
     lattice_in_cPar = 6 / filmIn;
 
     % c perpendicular
-    Psi = 1*(cor{3}(2)-cor{4}(2))/(cor{3}(1)-cor{4}(1));
+    Psi = -1*(cor{3}(2)-cor{4}(2))/(cor{3}(1)-cor{4}(1));
     filmOut = sin(Psi)*cor{3}(1)+cos(Psi)*cor{3}(2);
     filmIn = cos(Psi)*cor{3}(1)-sin(Psi)*cor{3}(2);
     lattice_out_cPerp = 2 / filmOut * 1.5;
