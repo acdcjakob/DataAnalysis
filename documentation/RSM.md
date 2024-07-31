@@ -34,7 +34,8 @@ Modular Stages
             - 2nd row: `xFilm yFilm`
         - **output** vectors of substrate, vectors of thin film
     - with the data, the tilt can be calculated and then the lattice constants, depending on orientation
-
+## a-orientation
+same as above
 ## Fix
 
 `W6902m` $\rightarrow$ passt
