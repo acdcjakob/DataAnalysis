@@ -18,7 +18,7 @@ q_Al2O3_lit_300 = getSapphireVector([0 0 0],[3 0 0]);
 %% plot for determining the experimental peak
 % set true for initial peak aquisition
 clear q_perp q_parallel data
-for n = []
+for n = [1,4,7]
     load(fileName)
     
     qx = q_perp{n};

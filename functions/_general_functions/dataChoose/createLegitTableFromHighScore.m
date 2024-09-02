@@ -1,4 +1,7 @@
 function output = createLegitTableFromHighScore(filePath,varargin)
+% createLegitTableFromHighScore(path) yields table with fielpath as input
+% createLegitTableFromHighScore(path,true) yields an empty table
+
     p = inputParser;
 
     addRequired(p,"filePath",@(x) isstring(x)|ischar(x));
@@ -15,7 +18,8 @@ function output = createLegitTableFromHighScore(filePath,varargin)
         'd-spacing [Å]','d_lattice';...
         'Height [cts]','I';...
         'Label','Label';...
-        'Backgr.[cts]','background'...
+        'Backgr.[cts]','background';...
+        'Shape Left','Lorentz'...
         };
 
     if p.Results.emptyTable
@@ -58,11 +62,11 @@ function output = splitLabel(labelColumn)
 % labelColumn is nx1 cell array with 'Al2O3 0 0 6'-like entries
 output = cell(1,4);
 
-for i = 1:numel(labelColumn)
-    thisSplit = strsplit(labelColumn{i});
-    output{1,1}(i,1) = string(thisSplit{1}); % phase
-    output{1,2}(i,1) = str2double(thisSplit{2}); % h
-    output{1,3}(i,1) = str2double(thisSplit{3}); % k
-    output{1,4}(i,1) = str2double(thisSplit{4}); % l
-end
+    for i = 1:numel(labelColumn)
+        thisSplit = strsplit(labelColumn{i});
+        output{1,1}(i,1) = string(thisSplit{1}); % phase
+        output{1,2}(i,1) = str2double(thisSplit{2}); % h
+        output{1,3}(i,1) = str2double(thisSplit{3}); % k
+        output{1,4}(i,1) = str2double(thisSplit{4}); % l
+    end
 end
