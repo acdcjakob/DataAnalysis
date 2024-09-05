@@ -7,15 +7,12 @@ if ~istable(IdTable)
     IdTable = searchSamples_v2({{"Id",IdTable}},true);
 end
 
-% --- m-Al2O3 ---
 
-if strcmp(IdTable.Sub,"m-Al2O3")
+
+if strcmp(IdTable.Sub,"m-Al2O3") % --- m-Al2O3 ---
     output = getRSMLattice_m(IdTable);
     return
-
-% --- a-Al2O3 ---
-
-elseif strcmp(IdTable.Sub,"a-Al2O3")
+elseif strcmp(IdTable.Sub,"a-Al2O3")% --- a-Al2O3 ---
     id = IdTable.Id;
     % 226
     lit{1} = getSapphireVector([0 0 6],[2 2 0]);
