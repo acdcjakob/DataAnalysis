@@ -1,13 +1,15 @@
 function plotRSM(sampleName,planeName,n,logLow)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+% plotRSM(sampleName,planeName,n,logLow)
 
 fileName = strcat('RSM_data_',sampleName,'_',planeName,'.mat');
 load(fileName)
 arrow = repmat("",[numel(data),1]);
 arrow(n) = "<---";
+if isrow(readme)
+    readme=transpose(readme);
+end
 
-disp([readme arrow])
+disp([readme arrow]);
 n(n>numel(data))=numel(data);
 if numel(n)>numel(data)
     n(numel(data)+1:end) = [];
