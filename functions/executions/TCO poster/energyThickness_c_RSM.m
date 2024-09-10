@@ -5,7 +5,7 @@ sampleTable = searchSamples_v2(...
         "RSM","a"}}...
     ,true);
 
-sampleTable = sortrows(sampleTable,"d");
+sampleTable = sortrows(sampleTable,"d","descend");
 N = numel(sampleTable.Id);
 F = figure("OuterPosition",[100 100 1000 500]);
 
@@ -31,4 +31,4 @@ end
 xlabel(ax(1),"q_{||} (nm^{-1})")
 ylabel(ax(1),"q_{\perp} (nm^{-1})")
 
-exportgraphics(gcf,"../plots/TCO/c-RSMs.pdf")
+exportgraphics(gcf,"../plots/TCO/c-RSMs.png","Resolution",500)

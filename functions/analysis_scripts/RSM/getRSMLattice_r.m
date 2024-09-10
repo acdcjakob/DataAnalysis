@@ -40,7 +40,7 @@ id = IdTable.Id;
     end
 
     % --- correction of the thin film tilt ---
-    if ~isnan(cor{2}) & ~isnan(cor{3})
+    % if ~isnan(cor{2}) & ~isnan(cor{3})
         tiltAngle_cPar = getTiltAngle(cor{2});
         tiltAngle_cPerp = getTiltAngle(cor{3});
         
@@ -53,16 +53,12 @@ id = IdTable.Id;
         for i = 3
             cor{i} = tiltMatrix_cPerp*cor{i};
         end
-    else
-        warning("No tilt correction because of missing symmetric peak")
-    end
+    % else
+    %     warning("No tilt correction because of missing symmetric peak")
+    % end
 
     % for oop only take symmetric peak
-    d_outSym(1) = 1 / cor{2}(2);
-    d_outSym(2) = 1 / cor{3}(2);
-    lattice.d_outSym = mean(d_outSym);
-    lattice.err_d_outSym = std(d_outSym);
-    
+    lattice.d_outSym = 1/cor{2}(2);    
 
     lattice.d_inAs = 1 / abs(cor{1}(1));
     lattice.d_outAs = 1 / abs(cor{1}(2));

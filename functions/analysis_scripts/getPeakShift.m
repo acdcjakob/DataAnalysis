@@ -2,7 +2,7 @@ function output = getPeakShift(IdInput,varargin)
 %GETPEAKSHIFT(Id) recognizes the substrate of the sample and calculates the
 %respective shift
 %   getPeakShift(___,"relative",true) gives the relative shift to
-%   literature value
+%   literature value (plane distances)
 %   getPeakShift(___,"Lattice",true) gives the lattice constant
 %   getPeakShift(___,"TableInput",true) accepts a searchSamples-output as
 %   input
@@ -40,9 +40,16 @@ for idx = 1:numel(sampleTable.Id(:))
     [shift,theta] = peakPositionNormed(T,{"Cr2O3","Al2O3"},planeShort); % degree
     
     if p.Results.Relative
-        a = literature(planeShort);
-        b = literature(planeShort)+shift;
-        output(idx) = (1/sind(b/2)-1/sind(a/2))*sind(a/2);
+        % n*lambda = 2dsin(2theta/2)
+        % d = n*lambda/2 * 1/sin(2theta/2)
+        % -> (d'-d)/d
+        %   = [ 1/sin(2theta'/2) - 1/sin(2theta/2) ] * sin(2theta/2)
+        %
+        % This differs from just (theta'-theta)/theta
+
+        t = literature(planeShort);
+        tPrime = literature(planeShort)+shift;
+        output(idx) = (1/sind(tPrime/2)-1/sind(t/2))*sind(t/2);
         fprintf( ...
         "\tRelative peak shift for "+Id+": "+string(output)+"\n");
     elseif p.Results.Lattice
