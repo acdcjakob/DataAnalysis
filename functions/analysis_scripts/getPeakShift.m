@@ -14,6 +14,7 @@ addParameter(p,"TableInput",false,@(x) true)
 parse(p,IdInput,varargin{:})
 
 
+
 if p.Results.TableInput
     sampleTable = IdInput;
 else
@@ -39,7 +40,9 @@ for idx = 1:numel(sampleTable.Id(:))
     [shift,theta] = peakPositionNormed(T,{"Cr2O3","Al2O3"},planeShort); % degree
     
     if p.Results.Relative
-        output(idx) = shift / literature(planeShort);
+        a = literature(planeShort);
+        b = literature(planeShort)+shift;
+        output(idx) = (1/sind(b/2)-1/sind(a/2))*sind(a/2);
         fprintf( ...
         "\tRelative peak shift for "+Id+": "+string(output)+"\n");
     elseif p.Results.Lattice

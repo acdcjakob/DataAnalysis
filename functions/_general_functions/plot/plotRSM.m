@@ -1,5 +1,14 @@
-function plotRSM(sampleName,planeName,n,logLow)
+function plotRSM(sampleName,planeName,n,logLow,varargin)
 % plotRSM(sampleName,planeName,n,logLow)
+p = inputParser();
+
+addRequired(p,"sampleName",@(x) true)
+addRequired(p,"planeName",@(x) true)
+addRequired(p,"n",@(x) true)
+addRequired(p,"logLow",@(x) true)
+addOptional(p,"M",eye(2),@(x) true)
+
+parse(p,sampleName,planeName,n,logLow,varargin{:})
 
 fileName = strcat('RSM_data_',sampleName,'_',planeName,'.mat');
 load(fileName)
@@ -16,9 +25,21 @@ if numel(n)>numel(data)
 end
 
 for n = n
-    qx = q_perp{n};
-    qy = q_parallel{n};
-    intensity = data{n};
+    if strcmp(p.UsingDefaults,"M")
+        qx = q_perp{n};
+        qy = q_parallel{n};
+        intensity = data{n};
+    else
+        for i = 1:numel(q_perp{n})
+            new = p.Results.M*[q_perp{n}(i);q_parallel{n}(i)];
+            q_perp{n}(i) = new(1);
+            q_parallel{n}(i) = new(2);
+        end
+        qx = q_perp{n};
+        qy = q_parallel{n};
+        intensity = data{n};
+    end
+
     contourf(qx,qy,intensity,logspace(0,logLow,30),"LineStyle","none")
     set(gca,"Colorscale","log")
     hold on

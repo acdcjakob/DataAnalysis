@@ -1,6 +1,9 @@
 function output = getFilePathsFromId(IdString,MessungString,Extension,varargin)
-
+% output is cell array with found fileNames
 p = inputParser();
+if ischar(IdString)
+    IdString = string(IdString);
+end
 
 addRequired(p,"IdString",@(x) true)
 addRequired(p,"MessungString",@(x) true)

@@ -1,4 +1,4 @@
-Subs = {'c','m','r','a'};
+    Subs = {'c','m','r','a'};
 SubCoef = {'(00.6)','(30.0)','(02.4)','(11.0)'};
 Lenses = {'-2','0','1','2'};
 DensityLabels = {energyDensity(-2,true);...

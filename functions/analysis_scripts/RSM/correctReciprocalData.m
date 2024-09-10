@@ -1,4 +1,4 @@
-function [qx_cor,qy_cor,parameters] = correctReciprocalData(qx,qy,peak_lit,peak_exp)
+function [qx_cor,qy_cor,parameters,M] = correctReciprocalData(qx,qy,peak_lit,peak_exp)
 
 % ----- function handles -----
 R_fh = ...
