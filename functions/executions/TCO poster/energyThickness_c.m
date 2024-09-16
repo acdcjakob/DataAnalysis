@@ -8,7 +8,7 @@ sampleTable = sortrows(sampleTable,"d");
 N = numel(sampleTable.Id);
 
 data = cell([N,1]);
-ax = createAxes;
+[ax,f1] = createAxes;
     set(gcf,"CurrentAxes",ax)
     hold(ax,"on")
 cm = linePainterMap([.2,.8,.2],[.7,.1,.7],N);
@@ -35,29 +35,52 @@ xline(ax,38.2,...
     Linewidth=2,...
     LineStyle="--",...
     DisplayName="pseudomorphic")
-l = legend;
+l = legend("Location","east");
     l.Title.String = "film thickness";
-axis([0.003764300847458   0.004204978813559   0.008500000000000   80.214954109604951]*1e4)
-title("(00.6) Cr2O3 on Al2O3")
+axis([38 42 1e2 5e4])
+title(ax,"(00.6) Cr2O3 on Al2O3")
 
 %% plot in plot
-ax2 = axes("Position",...
-    [0.343159826376302   0.673996175908216   0.201175148993157   0.220329827346034],...
-    "FontSize",12,...
-    "XAxisLocation","bottom",...
-    "YAxisLocation","left",...
-    "Box","on");
+% ax2 = axes("Position",...
+%     [0.343159826376302   0.673996175908216   0.201175148993157   0.220329827346034],...
+%     "FontSize",12,...
+%     "XAxisLocation","bottom",...
+%     "YAxisLocation","left",...
+%     "Box","on");
+[ax2,f2] = createAxes(1,400);
 grid(ax2,"on")
 hold(ax2,"on")
 xlabel("{\itd} (nm)")
-ylabel("\epsilon_{zz}")
-scatter(ax2,numeric(:,1),numeric(:,2)*100,36*1.5,cm,"filled","^")
+ylabel("\epsilon")
+% scatter(ax2,numeric(:,1),numeric(:,2)*100,36*1.5,cm,"filled","^",...
+%     "DisplayName","\epsilon_{zz}")
+scatter(ax2,numeric(:,1),numeric(:,2)*100,72,cm,"filled","^",...
+    "DisplayName","\epsilon_{zz}")
+plot(ax2,numeric(:,1),numeric(:,2)*100,"--k",...
+    HandleVisibility="off")
 ytickformat("percentage")
 yline(ax2,0.039*100,...
     Linewidth=2,...
-    LineStyle="--")
+    LineStyle="--",...
+    DisplayName="pseudomorphic")
 yline(ax2,0,...
-    LineWidth=2)
+    LineWidth=2,...
+    DisplayName="bulk")
 axis(ax2,"padded")
+l2 = legend(ax2,"location","east"); %optional
+title(ax2,"(00.6) Cr2O3 on Al2O3")
 
-exportgraphics(gcf,"../Plots/TCO/energyThickness_c.pdf")
+
+
+
+
+
+makePosterSize(ax,6,6);
+l.FontSize = 10;
+l.Position = [.49 .2 .34 .35];
+exportgraphics(f1,"../Plots/TCO/c_onlyDiff.eps")
+
+makePosterSize(ax2,6,6);
+l2.FontSize = 10;
+l2.Position = [.31 .43 .4 .18];
+exportgraphics(f2,"../Plots/TCO/c_epsilonZZ.eps")

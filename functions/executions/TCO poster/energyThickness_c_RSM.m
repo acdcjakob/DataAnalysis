@@ -7,8 +7,8 @@ sampleTable = searchSamples_v2(...
 
 sampleTable = sortrows(sampleTable,"d","descend");
 N = numel(sampleTable.Id);
-F = figure("OuterPosition",[100 100 1000 500]);
-
+F = figure("units","centi","OuterPosition",[2 2 18*1.5 7.5*1.5]);
+t = tiledlayout(1,N);
 lit = getSapphireVector([0 2 0],[0 0 10]);
 for i = 1:N
     [sub{i},film{i}] = getRSMData(sampleTable.Id{i},"mPar1");
@@ -16,10 +16,14 @@ for i = 1:N
     [~,~,~,M] = correctReciprocalData(...
         film{i}(1),film{i}(2),lit,sub{i});
     
-    ax(i) = axes("OuterPosition",[0+(i-1)/N 0 1/N 1],...
-        "LineWidth",.75,...
+    ax(i) = nexttile();
+    set(ax(i),...
+        "LineWidth",1,...
         "box","on",...
-        "Fontsize",14);
+        "Fontsize",14,...
+        "TitleFontSizeMultiplier",1,...
+        "TitleFontWeight","normal",...
+        "LabelFontSizeMultiplier",1);
     hold(ax(i),"on")
     plotRSM(sampleTable.Id{i},"0210",[1,2],1.5,M)
     axis([4.57  4.94    7    7.78])
@@ -28,7 +32,7 @@ for i = 1:N
 end
 
 
-xlabel(ax(1),"q_{||} (nm^{-1})")
-ylabel(ax(1),"q_{\perp} (nm^{-1})")
+xlabel(t,"q_{||} (nm^{-1})")
+ylabel(t,"q_{\perp} (nm^{-1})")
 
-exportgraphics(gcf,"../plots/TCO/c-RSMs.png","Resolution",500)
+% exportgraphics(gcf,"../plots/TCO/c-RSMs.png","Resolution",800)

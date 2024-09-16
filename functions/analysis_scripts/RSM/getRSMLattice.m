@@ -17,6 +17,7 @@ elseif strcmp(IdTable.Sub,"a-Al2O3")% --- a-Al2O3 ---
     return
 elseif strcmp(IdTable.Sub,"r-Al2O3")% --- r-Al2O3 ---
     output = getRSMLattice_r(IdTable);
+    return
 end
 
 end
