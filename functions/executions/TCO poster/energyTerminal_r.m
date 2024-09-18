@@ -72,16 +72,21 @@ SaPerp = scatter(ax2,x,abs([y.tiltAngle_cPerp]'*180/pi*60),72,"o","filled",...
 l = legend(ax,[SzSym Sz Sx],"Location","east");
 l.Title.String = "strain from RSMs";
 l.FontSize = 12;
-title(ax,"(01.2) Cr2O3 on Al2O3")
+title(ax,"(01.2) Cr_2O_3 on Al_2O_3")
 
 l2 = legend(ax2,"location","east");
 l2.Title.String = "tilt angle of film";
 l2.FontSize = 12;
-title(ax2,"(01.2) Cr2O3 on Al2O3")
+title(ax2,"(01.2) Cr_2O_3 on Al_2O_3")
 
 
-% exportgraphics(f1,"../Plots/TCO/r_strain.pdf");
-% exportgraphics(f2,"../Plots/TCO/r_tilt.pdf");
+makePosterSize(ax,7,7)
+set(f1,"renderer","Painters")
+exportgraphics(f1,"../Plots/TCO/r_strain.eps");
+
+makePosterSize(ax2,7,7)
+set(f2,"renderer","Painters")
+exportgraphics(f2,"../Plots/TCO/r_tilt.eps");
 
 
 

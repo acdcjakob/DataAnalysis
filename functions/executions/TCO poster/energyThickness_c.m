@@ -38,7 +38,7 @@ xline(ax,38.2,...
 l = legend("Location","east");
     l.Title.String = "film thickness";
 axis([38 42 1e2 5e4])
-title(ax,"(00.6) Cr2O3 on Al2O3")
+title(ax,"(00.6) Cr_2O_3 on Al_2O_3")
 
 %% plot in plot
 % ax2 = axes("Position",...
@@ -68,7 +68,7 @@ yline(ax2,0,...
     DisplayName="bulk")
 axis(ax2,"padded")
 l2 = legend(ax2,"location","east"); %optional
-title(ax2,"(00.6) Cr2O3 on Al2O3")
+title(ax2,"(00.6) Cr_2O_3 on Al_2O_3")
 
 
 
@@ -77,10 +77,10 @@ title(ax2,"(00.6) Cr2O3 on Al2O3")
 
 makePosterSize(ax,6,6);
 l.FontSize = 10;
-l.Position = [.49 .2 .34 .35];
+l.Position = [.53 .32 .24 .24];
 exportgraphics(f1,"../Plots/TCO/c_onlyDiff.eps")
 
 makePosterSize(ax2,6,6);
 l2.FontSize = 10;
-l2.Position = [.31 .43 .4 .18];
+% l2.Position = [.31 .43 .4 .18];
 exportgraphics(f2,"../Plots/TCO/c_epsilonZZ.eps")

@@ -51,7 +51,7 @@ Px = plot(ax,x,eyy*100,"--",Color=cs(1,:),...
 l = legend(ax,[Sz Sx Sy],"Location","southwest");
 l.Title.String = "strain from RSMs";
 l.FontSize = 12;
-title(ax,"(30.0) Cr2O3 on Al2O3")
+title(ax,"(30.0) Cr_2O_3 on Al_2O_3")
 
 %%
 [ax2,f2] = createAxes(1,500);
@@ -70,7 +70,7 @@ title(ax,"(30.0) Cr2O3 on Al2O3")
     l2 = legend(ax2,"location","northeast");
     l2.Title.String = "tilt angle of film";
     l2.FontSize = 12;
-    title(ax2,"(30.0) Cr2O3 on Al2O3")
+    title(ax2,"(30.0) Cr_2O_3 on Al_2O_3")
     
     drawnow 
 
@@ -94,7 +94,7 @@ l2b = legend(ax2b,"location","east");
 l2b.Title.String = "shear angle of film";
 l2b.FontSize = 12;
 l2b.Color="w";
-title(ax2,"(30.0) Cr2O3 on Al2O3")
+title(ax2,"(30.0) Cr_2O_3 on Al_2O_3")
 
 SaPar = scatter(ax2,x,abs([y.tiltAngle_cPar]'*180/pi*60),72,"^","filled",...
     Markerfacecolor=cs(2,:),...
@@ -125,14 +125,17 @@ SsPerp = scatter(ax2b,x,abs([y.shearAngle_cPerp]'*180/pi*3600),72,"o","filled",.
 
 
   
-
-
+ylim(ax,[-1.5 .5])
+makePosterSize(ax,6,5)
+l.Title.String = [];
+exportgraphics(f1,"../Plots/TCO/m_strain.eps");
 
 % exportgraphics(f1,"../Plots/TCO/m_strain.pdf");
 % exportgraphics(f2,"../Plots/TCO/m_tilt+shear.pdf");
 
 % delete(l2)
 % delete(l2b),
+
 makePosterSize(ax2,7,7)
 makePosterSize(ax2b,7,7)
 l2.Location="northwest";

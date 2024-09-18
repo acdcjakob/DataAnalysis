@@ -1,6 +1,7 @@
 function [ax,f] = makeLatexSize(w0,ratio,varargin)
-%MAKELATEXSIZE Summary of this function goes here
-%   Detailed explanation goes here
+% [ax,f] = makeLatexSize(w0,ratio) with w0 the relative length to 14.64 cm
+% (textwidth of latex book class)
+% [ax,f] = makeLatexSize(w0,ratio,ax) alters the input axes
 
 p = inputParser();
 
@@ -33,7 +34,11 @@ set(ax,...
     "units","centimeters",...
     "OuterPosition",[2 2 w h])
 
-formatAxes(ax);
+if strcmp(ax.Type,"tiledlayout")
+    return
+else
+    formatAxes(ax);
+end
 
 end
 

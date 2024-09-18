@@ -21,6 +21,11 @@ if strcmp(p.Results.phase,"Cr2O3")
     
     output = theta2(d(hkl,a_Cr,c_Cr),1);
     return
+elseif strcmp(p.Results.phase,"Ga2O3")
+    a_Ga = 4.98;
+    c_Ga = 13.43;
+
+    output = theta2(d(hkl,a_Ga,c_Ga),1);
 end
 
 
