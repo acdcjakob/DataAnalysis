@@ -25,6 +25,8 @@ end
 % pFit = polyfit(L,A,2);
 % calculated once
 
+% in chamber we have 164 mJ left, when 650 is applied.
+% Assume linearity
 P = 164.3 * energy/650; % mJ
 pFit = [0.0074    0.5304   15.6129];
 

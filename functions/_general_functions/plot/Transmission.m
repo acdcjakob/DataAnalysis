@@ -13,7 +13,7 @@ Data = zeros(n,NumCol);
 for i = 1:NumCol
     Data(:,i) = DataRaw{1,i}; 
 end
-get
+
 % create table for readable variables
 DataTable = array2table(Data,'VariableNames',...
     {'Angle','Intensity'});

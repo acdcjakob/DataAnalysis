@@ -42,7 +42,10 @@ for i = 1:4
     
     formatAxes(ax(i))
     set(ax(i),"YScale","log",...
-        "YTick",[])
+        "YTick",[],...
+        "MinorGridLineWidth",.75)
+    grid(ax(i),"minor")
+    grid(ax(i),"on")
 end
 
 xlabel(t,"2\theta (°)")

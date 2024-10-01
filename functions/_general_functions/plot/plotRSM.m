@@ -1,4 +1,4 @@
-function plotRSM(sampleName,planeName,n,logLow,varargin)
+function h = plotRSM(sampleName,planeName,n,logLow,varargin)
 % plotRSM(sampleName,planeName,n,logLow)
 p = inputParser();
 
@@ -40,7 +40,7 @@ for n = n
         intensity = data{n};
     end
 
-    contourf(qx,qy,intensity,logspace(0,logLow,30),"LineStyle","none")
+    [~,h] = contourf(qx,qy,intensity,logspace(0,logLow,30),"LineStyle","none","HandleVisibility","off");
     set(gca,"Colorscale","log")
     hold on
 end

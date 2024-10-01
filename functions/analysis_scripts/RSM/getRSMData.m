@@ -31,8 +31,8 @@ if dataSz(1)>1
     return
 else
     % for symmetric reflexes I only wrote 1 line sometimes
-    filmPeaks = subPeaks;
-    subPeaks = [nan;nan];
+    % filmPeaks = subPeaks;
+    % subPeaks = [nan;nan];
 end
 
 end

@@ -20,7 +20,12 @@ h = textwidth*w0*ratio;
 
 if isgraphics(p.Results.ax0)
     ax = p.Results.ax0;
-    f = get(p.Results.ax0,"parent");
+    par = get(ax,"parent");
+    if strcmp(par.Type,"tiledlayout")
+        f = get(par,"Parent");
+    else
+        f = get(ax,"parent");
+    end
 else
     f = figure();
     ax = axes();
