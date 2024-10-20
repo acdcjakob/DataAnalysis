@@ -1,7 +1,7 @@
 function [E,T] = getTransmission(Id)
-
-    files(1) = getFilePathsFromId(Id,"Transmission",".dx","filter",{{"ref"}});
-    files(2) = getFilePathsFromId(Id,"Transmission",".dx","filter",{{Id}});
+% output E [eV] and T [100%]
+    files(1) = getFilePathsFromId(Id,"Transmission",".dx",{{"ref"}});
+    files(2) = getFilePathsFromId(Id,"Transmission",".dx",{{Id}});
     
     for i = 1:2
         dataRaw{i} = readmatrix(files{i},...

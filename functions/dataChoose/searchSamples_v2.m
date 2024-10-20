@@ -64,16 +64,27 @@ for i_adj = 1:n_adj
 
     n_conj = size(searchAdjunct{i_adj},1);
     tabelleCut = tabelle;
+
+    outputString = "";
     for i_conj = 1:n_conj
         property = searchAdjunct{i_adj}{i_conj,1};
         value = searchAdjunct{i_adj}{i_conj,2};
+        if ~any(ismember(fieldnames(tabelleCut),property))
+            warning(property+" is no valid field name")
+            TrueSamples = [];
+            if p.Results.giveInfo == true
+                TrueSamples = table();
+            end
+            return
+        end
         TrueIdx = findProperty(tabelleCut,...
             property,...
             value);
         tabelleCut = tabelleCut(TrueIdx,:);
-        disp("searchSamples.m: Samples mit "+property+" "+value+" wurden gesucht")
+        outputString = outputString+newline+"   "+property+" = "+value;
+        % disp("searchSamples.m: Samples mit "+property+" "+value+" wurden gesucht")
     end
-    
+    disp("Suche samples mit:"+outputString)
     tabelleNew = [tabelleNew;tabelleCut];
 end
 

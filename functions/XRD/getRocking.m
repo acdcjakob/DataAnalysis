@@ -5,9 +5,10 @@ function output = getRocking(IdCell)
 %       - string array (-> multiple Ids)
 %       - char vector (-> one Id)
 
-cd C:\Users\acdcj\Documents\_MasterThesis\DataAnalysis
-addpath(genpath("C:\Users\acdcj\Documents\_MasterThesis\DataAnalysis"))
-%%
+if isempty(IdCell)
+    output = nan;
+    return
+end
 
 % --- if input is cell array ---
     if iscell(IdCell)

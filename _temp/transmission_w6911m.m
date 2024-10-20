@@ -2,6 +2,9 @@ IdTable = searchSamples_v2({{'Batch','Cr2O3_energy';'Transmission','y'}},true);
 IdTable = sortrows(IdTable,"NameVal");
 
 cs = linePainterMap([.2 .8 .2],[.8 .2 .8],numel(IdTable.Id));
+E = {};
+T = {};
+
 for i = 1:numel(IdTable.Id)
     [E{i},T{i}] = getTransmission(IdTable.Id{i});
     T{i}(T{i}<=0)=nan;
@@ -25,7 +28,7 @@ end
 
 set(gca,"box","on","linewidth",1)
 xlabel("{\itE} (eV)")
-ylabel("(\alpha*E)^{"+num2str(exponent)+"} (nm^{-1} eV)^{"+num2str(exponent)+"}")
+ylabel("(\alpha*E)^{"+num2str(exponent)+"} (cm^{-1} eV)^{"+num2str(exponent)+"}")
 grid
 
 for i = 1:numel(IdTable.Id)

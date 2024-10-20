@@ -11,10 +11,15 @@ p = inputParser();
 
 parse(p,w0,ratio,varargin{:})
 
+% ylabel takes 0.8 cm
+% yticklabels take 0.6 cm
+% xlabel takes 0.9 cm
+% yticklabels take 0.7 cm
 
+% experience: need some more horizontal buffer space; e.g. 0.2
 textwidth = 14.64; % in cm
-w = textwidth*w0;
-h = textwidth*w0*ratio;
+w = textwidth*w0 - 0.8-0.6-0.2;
+h = textwidth*w0*ratio - 0.9-0.7;
 
 
 
@@ -37,7 +42,7 @@ set(f,...
 
 set(ax,...
     "units","centimeters",...
-    "OuterPosition",[2 2 w h])
+    "Position",[2 2 w h])
 
 if strcmp(ax.Type,"tiledlayout")
     return

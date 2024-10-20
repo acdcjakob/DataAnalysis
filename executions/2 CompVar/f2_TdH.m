@@ -63,6 +63,7 @@ exportgraphics(F,"../Plots/Cr2O3/2 Doping/2-TdH.png","Resolution",250)
 %% activation energy
 F2 = figure("OuterPosition",[500 100 800 500]);
 T = tiledlayout(2,2);
+makeLatexSize(1,.7,T)
 k = 8.62e-5; % eV / K
 % 0.01%-ZnO-doped target
 
@@ -79,6 +80,8 @@ y2 = y(x>=0.012);
 p1 = polyfit(x1,y1,1);
 p2 = polyfit(x2,y2,1);
 T1 = nexttile;
+    formatAxes(T1);
+    hold(T1,"on");
 plot(x*1000,exp(y),"s",HandleVisibility="off",MarkerFaceColor=C(2,:),Color=(C(2,:)*0.5))
 set(gca,"Yscale","log")
 drawnow
@@ -100,7 +103,7 @@ ylabel(T1,"\rho (\Omegam)")
 grid on
 
 title("0.01%-ZnO doped trgt")
-
+formatAxes(T1);
 % pure target
 
 d = data{4,1}{1,1};
@@ -115,6 +118,8 @@ y2 = y(x>=0.014);
 p1 = polyfit(x1,y1,1);
 p2 = polyfit(x2,y2,1);
 T2 = nexttile();
+    formatAxes(T2);
+    hold(T2,"on");
 plot(x*1000,exp(y),"s",HandleVisibility="off",MarkerFaceColor=C(4,:),Color=(C(4,:)*0.5))
 set(gca,"Yscale","log")
 drawnow
@@ -136,7 +141,7 @@ ylabel("\rho (\Omegam)")
 grid on
 
 title("pure trgt")
-
+formatAxes(T2);
 % 1%-ZnO doped
 
 d = data{3,1}{1,1};
@@ -150,7 +155,10 @@ y2 = y(x>=0.01);
 
 p1 = polyfit(x1,y1,1);
 p2 = polyfit(x2,y2,1);
-T2 = nexttile();
+T3 = nexttile();
+
+    formatAxes(T3);
+    hold(T3,"on");
 plot(x*1000,exp(y),"s",HandleVisibility="off",MarkerFaceColor=C(3,:),Color=(C(3,:)*0.5))
 set(gca,"Yscale","log")
 drawnow
@@ -165,14 +173,14 @@ plot(x*1000,exp(polyval(p2,x)),"b-","DisplayName",...
     "E_A = "+num2str(act(2),"%.1f")+" meV",...
     LineWidth=1);
 
-l = legend(T2,"Location","southeast");
+l = legend(T3,"Location","southeast");
 % l.Title.String = "\rho \propto exp({E_A/(kT)})";
 xlabel("T^{-1} (1000/K)")
 ylabel("\rho (\Omegam)")
 grid on
 
 title("1%-ZnO doped trgt")
-
+formatAxes(T3);
 % 0.01-CuO doped
 
 d = data{1,1}{1,1};
@@ -186,12 +194,14 @@ y2 = y(x>=0.009&x<0.016);
 
 p1 = polyfit(x1,y1,1);
 p2 = polyfit(x2,y2,1);
-T1 = nexttile;
+T4 = nexttile;
+    formatAxes(T4);
+    hold(T4,"on");
 plot(x*1000,exp(y),"s",HandleVisibility="off",MarkerFaceColor=C(1,:),Color=(C(1,:)*0.5))
 set(gca,"Yscale","log")
 drawnow
 set(gca,"YLimMode","manual")
-hold(T1,"on")
+hold(T4,"on")
 act = [p1(1)*k*1000,p2(1)*k*1000]; % meV
 
 plot(x*1000,exp(polyval(p1,x)),"r-","DisplayName",...
@@ -201,12 +211,13 @@ plot(x*1000,exp(polyval(p2,x)),"b-","DisplayName",...
     "E_A = "+num2str(act(2),"%.1f")+" meV",...
     LineWidth=1);
 
-l = legend(T1,"Location","southeast");
+l = legend(T4,"Location","southeast");
 l.Title.String = "\rho \propto exp({E_A/(kT)})";
 xlabel(T1,"T^{-1} (1000/K)")
 ylabel(T1,"\rho (\Omegam)")
 grid on
 
 title("0.01%-CuO doped trgt")
-exportgraphics(F2,"../Plots/Cr2O3/2 Doping/2-TdH_activation.pdf")
-exportgraphics(F2,"../Plots/Cr2O3/2 Doping/2-TdH_activation.png","Resolution",250)
+formatAxes(T4);
+% exportgraphics(F2,"../Plots/Cr2O3/2 Doping/2-TdH_activation.pdf")
+% exportgraphics(F2,"../Plots/Cr2O3/2 Doping/2-TdH_activation.png","Resolution",250)
