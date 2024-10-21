@@ -104,5 +104,5 @@ for i = 1:numel(subs)
 end
 linkaxes(ax)
 
-% exportgraphics(F,"../Plots/Cr2O3/2 Doping/2-contacts.pdf")
-% exportgraphics(F,"../Plots/Cr2O3/2 Doping/2-contacts.png","Resolution",250)
+set(figHand,"Renderer","painters")
+exportgraphics(figHand,"../Plots/Thesis/2/2_doped_contacts.eps")
