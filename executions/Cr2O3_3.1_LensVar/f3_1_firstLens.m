@@ -1,4 +1,4 @@
-cd C:\Users\acdcj\Documents\_MasterThesis\DataAnalysis
+% cd C:\Users\acdcj\Documents\_MasterThesis\DataAnalysis
 figure();
 set(gcf,"OuterPosition",[100 100 500 500])
 %%

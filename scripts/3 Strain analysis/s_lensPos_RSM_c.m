@@ -7,10 +7,20 @@ sampleTable = searchSamples_v2(...
 
 sampleTable = sortrows(sampleTable,"d","descend");
 N = numel(sampleTable.Id);
-F = figure("units","centi","OuterPosition",[2 2 18*1.5 7.5*1.5]);
-t = tiledlayout(1,N);
-lit = getSapphireVector([0 2 0],[0 0 10]);
+tileH = tiledlayout(1,N,...
+    "Padding","tight",...
+    "TileSpacing","compact");
+[tileH, fH] = makeLatexSize(1,.5,tileH);
 
+xlabel(tileH,"q_{||} (nm^{-1})")
+ylabel(tileH,"q_{\perp} (nm^{-1})")
+sgtitle(tileH,"{\itd} (nm)")
+tileH.Title.FontSize = 12;
+
+lit = getSapphireVector([0 2 0],[0 0 10]);
+ax = gobjects(N,1);
+
+drawnow
 for i = 1:N
     [sub{i},film{i}] = getRSMData(sampleTable.Id{i},"mPar1");
     
@@ -18,22 +28,18 @@ for i = 1:N
         film{i}(1),film{i}(2),lit,sub{i});
     
     ax(i) = nexttile();
-    set(ax(i),...
-        "LineWidth",1,...
-        "box","on",...
-        "Fontsize",14,...
-        "TitleFontSizeMultiplier",1,...
-        "TitleFontWeight","normal",...
-        "LabelFontSizeMultiplier",1);
-    hold(ax(i),"on")
+        hold(ax(i),"on")
+        formatAxes(ax(i))
+
     plotRSM(sampleTable.Id{i},"0210",[1,2],1.5,M)
     axis([4.57  4.94    7    7.78])
     drawnow
-    title("{\itd} = "+sampleTable.d(i)+"nm")
+    title(ax(i),sampleTable.d(i))
+    ax(i).Title.FontSize = 10;
+    ax(i).Title.FontWeight = "normal";
+
+    drawnow
 end
 
 
-xlabel(t,"q_{||} (nm^{-1})")
-ylabel(t,"q_{\perp} (nm^{-1})")
-
-% exportgraphics(gcf,"../plots/TCO/c-RSMs.png","Resolution",800)
+exportgraphics(fH,"../Plots/Thesis/3/3_lensPos_RSM_c.png","Resolution",800)

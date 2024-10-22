@@ -84,7 +84,7 @@ for i_adj = 1:n_adj
         outputString = outputString+newline+"   "+property+" = "+value;
         % disp("searchSamples.m: Samples mit "+property+" "+value+" wurden gesucht")
     end
-    disp("Suche samples mit:"+outputString)
+    disp("search samples with:"+outputString)
     tabelleNew = [tabelleNew;tabelleCut];
 end
 
