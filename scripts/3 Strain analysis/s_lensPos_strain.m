@@ -27,8 +27,8 @@ tileH = tiledlayout(2,2,"padding","tight","TileSpacing","compact");
 [tileH,figH] = makeLatexSize(.85,.7,tileH); % space for colorbar
 
 % init
-axH = gobjects(4);
-scH = gobjects(4);
+axH = gobjects(4,1);
+scH = gobjects(4,1);
 
 colMap = jet;
 FLim = [min(vertcat(F{:})) max(vertcat(F{:}))];
@@ -78,3 +78,49 @@ legH = legend(axH(2));
 formatAxes(axH(1));
 
 exportgraphics(figH,"../Plots/Thesis/3/3_lensPos_strain.eps")
+
+
+
+
+%% Misc
+% r-plane
+f = figure();
+rAx = copyobj(axH(2),f);
+rCb = colorbar(rAx);
+rCb.Label.String = cb.Label.String;
+[rAx,f] = makeLatexSize(.35,.5/.35,rAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+ylim([-.2 1])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+
+exportgraphics(f,"../Plots/Thesis/3/3_misc_lensPos_strain_r_zoomed.eps")
+
+% m-plane
+f = figure();
+mAx = copyobj(axH(3),f);
+mCb = colorbar(mAx);
+mCb.Label.String = cb.Label.String;
+[mAx,f] = makeLatexSize(.35,.5/.35,mAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+ylim([-.2 1])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+
+exportgraphics(f,"../Plots/Thesis/3/3_misc_lensPos_strain_m_zoomed.eps")
+
+% a-plane
+f = figure();
+aAx = copyobj(axH(4),f);
+aCb = colorbar(aAx);
+aCb.Label.String = cb.Label.String;
+[aAx,f] = makeLatexSize(.35,.5/.35,aAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+ylim([-.2 2])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+
+exportgraphics(f,"../Plots/Thesis/3/3_misc_lensPos_strain_a_zoomed.eps")

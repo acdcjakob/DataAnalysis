@@ -23,6 +23,9 @@ function [E,T] = getTransmission(Id)
     e0 = 1.602e-19; % J
     E = h*c ./ (lambda*1e-9*e0); % eV
     
+    if nargout == 1 % give both outputs in one array
+        E = [E,T];
+    end
     % figure()
     %     plot(lambdaRef,IRef,DisplayName="reference")
     %     hold on
