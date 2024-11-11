@@ -48,7 +48,7 @@ for i = 1:N
             "Color",cs(i,:));
 end
 lh = legend(ax,"Location","east");
-    lh.Title.String = "T_{growth}";
+    lh.Title.String = "\Theta_{growth}";
     lh.Position = [0.273765900639680   0.499345871822019   0.174033151454469   0.269880180109560];
 formatAxes(ax);
 xlim([53 70])
@@ -74,4 +74,4 @@ end
 % legend(ax2);
 
 set(fh,"Renderer","painters")
-exportgraphics(fh,"../Plots/Thesis/1/Temperature/1_temperature_2theta.eps")
+exportgraphics(fh,"../Plots/Thesis/1/1_temperature_2theta.eps")

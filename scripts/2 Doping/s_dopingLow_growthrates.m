@@ -58,4 +58,5 @@ th.YLabel.FontSize = 12;
 lh = legend(ax(2));
 formatAxes(ax(2));
 
+linkaxes(ax,"y")
 exportgraphics(fh,"../Plots/Thesis/2/2_doped0.01_window.eps");

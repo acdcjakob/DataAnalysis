@@ -17,7 +17,7 @@ for i = 1:2
 end
 
 %% plotting section
-[ax,fh] = makeLatexSize(.5,1);
+[ax,fh] = makeLatexSize(1,.5);
     hold(ax,"on");
 ph = gobjects(4,2);
 cs = {cool(4)*.8 autumn(4)*.8};
@@ -38,14 +38,18 @@ for i = 1:2
     end
 end
 
-label2Theta(ax);
+xlabel(ax,"2\theta (°)")
+ylabel(ax,"counts (a.u.)")
+set(ax,"Yscale","log")
+
 set(ax,...
     "XGrid","on",...
-    "YTick",[])
+    "YTickLabel",{},...
+    "YTick",10.^(0:1:5));
 axis(1.0e+03 * ...
    [0.062537037037037   0.066796296296296   0.017782794100389   5.076396728502274])
 
-legend(Location="northoutside",Numcolumns=2)
+legend(Location="eastoutside",Numcolumns=1)
 formatAxes(ax)
 
 exportgraphics(fh,"../Plots/Thesis/1/1_initial_checkPhiDependence.eps")

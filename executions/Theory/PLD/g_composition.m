@@ -12,7 +12,7 @@ colIdx = floor(rescale(monteError)*99)+1;
 clim([min(monteError) max(monteError)]);
 colormap(cm);
 
-ax = makeLatexSize(.5,1,gca);
+[ax,f] = makeLatexSize(.5,1,gca);
 hold(ax,"On");
 
 for j = flip(1:numel(monteError))
@@ -51,3 +51,6 @@ lh = legend("Position",[0.3307    0.6693    0.3175    0.1100]);
 xlim([2 10]);
 ylim([0 0.01]);
 
+hold off
+
+exportgraphics(f,"../Plots/Thesis/2/g_yToComposition.eps")

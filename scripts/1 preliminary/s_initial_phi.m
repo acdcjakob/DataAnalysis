@@ -32,7 +32,7 @@ end
 
 %% plotting section
 % init
-[ax,fh] = makeLatexSize(1,.6);
+[ax,fh] = makeLatexSize(1.1,.4);
     hold(ax,"on")
     fh.Renderer = "painters";
 
@@ -72,7 +72,7 @@ for i = 1:2
             samTable{i}.NameVal{j}+" "+samTable{i}.NameUnit{j};
     end
     for j = 1:numel(ph{i}(:,2))
-        ph{i}(j,2).Color = cmap{i}(j,:).*[.6 .7 .5];
+        ph{i}(j,2).Color = cmap{i}(j,:).*[.6 .7 .5].*.8; % adjust factor for brightness
     end
     logAdd = logAdd + 4;
 end

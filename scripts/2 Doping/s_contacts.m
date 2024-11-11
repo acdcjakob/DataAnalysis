@@ -105,4 +105,4 @@ end
 linkaxes(ax)
 
 set(figHand,"Renderer","painters")
-exportgraphics(figHand,"../Plots/Thesis/2/2_doped_contacts.eps")
+exportgraphics(figHand,"../Plots/Thesis/2/2_contacts.eps")

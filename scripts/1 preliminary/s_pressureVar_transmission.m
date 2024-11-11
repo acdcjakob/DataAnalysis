@@ -60,10 +60,10 @@ lh = legend("Location","northwest");
 grid on
 xlabel("{\itE} (eV)")
 % ylabel(getGreek('alpha')+" (cm^{-1})") % for alpha plot
-ylabel("(\alphaE)^2 (cm^{-1}\times eV)^2") % for tauc plot
+ylabel("(\alpha{\itE})^2 (cm^{-1}\times eV)^2") % for tauc plot
 % ylabel("{\itT} (%)"), delete(phFit), lh.Location = "northeast";% for T plot
 
 
 % fh.Renderer = "Painters"; %this does not render transparancy!
-exportgraphics(fh,"../Plots/Thesis/1/Pressure/1_tauc.pdf")
-% exportgraphics(fh,"../Plots/Thesis/1/Pressure/1_transmission.pdf")
+exportgraphics(fh,"../Plots/Thesis/1/1_pressure_tauc.pdf")
+% exportgraphics(fh,"../Plots/Thesis/1/1_pressure_transmission.pdf")

@@ -58,7 +58,7 @@ for i = 1:nP
     title(axH(i),"{\it"+planes(i)+"}-plane")
 
     % add pseudomophic
-    yline(axH(i),pseudo(i),"r--","LineWidth",1,"DisplayName","pseudomorphic")
+    psH(i) = yline(axH(i),pseudo(i),"r--","LineWidth",1,"DisplayName","pseudomorphic");
 end
 linkaxes(axH,'x');
 linkaxes(axH(1:4),'y')
@@ -82,6 +82,17 @@ exportgraphics(figH,"../Plots/Thesis/3/3_lensPos_strain.eps")
 
 
 
+%% Misc
+linkaxes(axH,'off')
+ylim(axH(1),[-.2 4])
+ylim(axH(2),[-.2 1])
+ylim(axH(3),[-.2 1])
+ylim(axH(4),[-.2 2])
+
+
+legH.Visible = "off";
+psH(1).Visible = "off";
+exportgraphics(figH,"../Plots/Thesis/3/3_misc_lensPos_strain_zoomed.eps")
 %% Misc
 % r-plane
 f = figure();
