@@ -56,4 +56,4 @@ xlim(ax(2),[720 770])
 
 legend(ax(1),flip(sh),"location","west")
 
-exportgraphics(fh,"../Plots/Thesis/1/1_both_strain.eps")
+% exportgraphics(fh,"../Plots/Thesis/1/1_both_strain.eps")

@@ -14,7 +14,7 @@ tileH = tiledlayout(1,N,...
 
 xlabel(tileH,"q_{||} (nm^{-1})")
 ylabel(tileH,"q_{\perp} (nm^{-1})")
-sgtitle(tileH,"{\itd} (nm)")
+% sgtitle(tileH,"{\itd} (nm)")
 tileH.Title.FontSize = 12;
 
 lit = getSapphireVector([0 2 0],[0 0 10]);
@@ -34,7 +34,7 @@ for i = 1:N
     plotRSM(sampleTable.Id{i},"0210",[1,2],1.5,M)
     axis([4.57  4.94    7    7.78])
     drawnow
-    title(ax(i),sampleTable.d(i))
+    title(ax(i),"{\itd} = "+num2str(sampleTable.d(i))+" nm")
     ax(i).Title.FontSize = 10;
     ax(i).Title.FontWeight = "normal";
 

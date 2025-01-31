@@ -94,12 +94,25 @@ legH.Visible = "off";
 psH(1).Visible = "off";
 exportgraphics(figH,"../Plots/Thesis/3/3_misc_lensPos_strain_zoomed.eps")
 %% Misc
+% c-plane
+f = figure();
+cAx = copyobj(axH(1),f);
+cCb = colorbar(cAx);
+cCb.Label.String = cb.Label.String;
+[cAx,f] = makeLatexSize(.35,1,cAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+ylim([0 4])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+
+exportgraphics(f,"../Plots/Thesis/3/3_misc_lensPos_strain_c_zoomed.eps")
 % r-plane
 f = figure();
 rAx = copyobj(axH(2),f);
 rCb = colorbar(rAx);
 rCb.Label.String = cb.Label.String;
-[rAx,f] = makeLatexSize(.35,.5/.35,rAx);
+[rAx,f] = makeLatexSize(.35,1,rAx);
 f.Position = f.Position+[0 0 2 0]; %space for colorbar
 ylim([-.2 1])
 

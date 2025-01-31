@@ -1,25 +1,24 @@
 % alpha phase
+
 data = [...
     4.98 13.43; ...
     4.96 13.59; ...
-    4.75 12.99
+    4.76 13.00
     ];
 
 names = [...
-    "\alpha-Ga2O3"; ...
-    "\alpha-Cr2O3"; ...
-    "\alpha-Al2O3"
+    "\alpha-Ga_2O_3"; ...
+    "\alpha-Cr_2O_3"; ...
+    "\alpha-Al_2O_3"
     ];
 
-figure("OuterPosition",[100 100 400 400]);
-hold(gca,"on")
-legend(gca,"location","north")
+[ax,f] = makeLatexSize(.5,.8);
+hold(ax,"on")
+legend(ax,"location","north")
 axis padded
-grid(gca,"on")
-xlabel(gca,"{\ita} ("+char(197)+")")
-ylabel(gca,"{\itc} ("+char(197)+")")
-fontsize(12,"points")
-set(gca,"Box","on")
+grid(ax,"on")
+xlabel(ax,"{\ita} ("+char(197)+")")
+ylabel(ax,"{\itc} ("+char(197)+")")
 
 CM = jet(4);
 for n =[2,1,3]
@@ -29,6 +28,15 @@ for n =[2,1,3]
         "Marker","s",...
         "SizeData",36*2)
 end
+formatAxes(ax)
 
-exportgraphics(gcf,"../Plots/graphics/graphics-plot-latticeConstants.pdf")
-exportgraphics(gcf,"../Plots/graphics/graphics-plot-latticeConstants.png","Resolution",250)
+axHilf = axes;
+axHilf.YColor = "none";
+axHilf.XColor = "none";
+axHilf.Position = [0.0507    0.0737    0.8543    0.8513];
+axHilf.Color = "none";
+
+% exportgraphics(gcf,"../Plots/graphics/graphics-plot-latticeConstants.pdf")
+% exportgraphics(gcf,"../Plots/graphics/graphics-plot-latticeConstants.png","Resolution",250)
+set(ax,"Position",get(ax,"Position")+[.5 0 0 0])
+exportgraphics(f,"../Plots/Thesis/graphs/latticeConstantsComparison.png","Resolution",400)

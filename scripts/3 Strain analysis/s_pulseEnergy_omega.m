@@ -116,3 +116,17 @@ for i = 1:4
         "../Plots/Thesis/3/3_misc_pulseEnergy_omegaPattern_"+planes(i)+".eps")
 end
 
+%% MISC
+% c-plane
+f = figure();
+cAx = copyobj(axH(1,1),f);
+cCb = colorbar(cAx);
+cCb.Label.String = cb.Label.String;
+[cAx,f] = makeLatexSize(.35,1,cAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+% ylim([-.2 1])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+% ylim([.2 .52])
+exportgraphics(f,"../Plots/Thesis/3/3_misc_pulseEnergy_omega_c_zoomed.eps")

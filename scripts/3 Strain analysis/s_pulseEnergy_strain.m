@@ -83,3 +83,46 @@ figH.Position = figH.Position+[0 0 2 0]; % make space for colorbar
 % formatAxes(axH(1));
 
 exportgraphics(figH,"../Plots/Thesis/3/3_pulseEnergy_strain.eps")
+
+%% MISC
+% m-plane
+f = figure();
+mAx = copyobj(axH(3,1),f);
+mCb = colorbar(mAx);
+mCb.Label.String = cb.Label.String;
+[mAx,f] = makeLatexSize(.35,.5/.35,mAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+% ylim([-.2 1])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+
+exportgraphics(f,"../Plots/Thesis/3/3_misc_pulseEnergy_strain_m_zoomed.pdf")
+
+% r-plane
+f = figure();
+rAx = copyobj(axH(2,1),f);
+rCb = colorbar(rAx);
+rCb.Label.String = cb.Label.String;
+[rAx,f] = makeLatexSize(.35,1,rAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+% ylim([-.2 1])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+ylim([.2 .52])
+exportgraphics(f,"../Plots/Thesis/3/3_misc_pulseEnergy_strain_r_zoomed.pdf")
+
+% a-plane
+f = figure();
+aAx = copyobj(axH(4,1),f);
+aCb = colorbar(aAx);
+aCb.Label.String = cb.Label.String;
+[aAx,f] = makeLatexSize(.35,1,aAx);
+f.Position = f.Position+[0 0 2 0]; %space for colorbar
+% ylim([-.2 1])
+
+xlabel(tileH.XLabel.String)
+ylabel(tileH.YLabel.String)
+ylim([.2 1.2])
+exportgraphics(f,"../Plots/Thesis/3/3_misc_pulseEnergy_strain_a_zoomed.pdf")

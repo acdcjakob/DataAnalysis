@@ -73,5 +73,6 @@ for i = 1:7
 end
 % legend(ax2);
 
+xline(get2Theta([3 0 0],"Cr2O3"),"-r","LineWidth",1,"HandleVisibility","off")
 set(fh,"Renderer","painters")
 exportgraphics(fh,"../Plots/Thesis/1/1_temperature_2theta.eps")

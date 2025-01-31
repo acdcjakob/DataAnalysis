@@ -55,28 +55,34 @@ for i = 1:2
             yFilm = yFilm(idxFilm);
             
         
-        ph{i}(ii,1) = plot(ax,xSub,ySub);
-        ph{i}(ii,2) = plot(ax,xFilm,yFilm,"HandleVisibility","off");
+        % ph{i}(ii,1) = plot(ax,xSub,ySub);
+        ph{i}(ii,2) = plot(ax,xFilm,yFilm);
     
 
         logAdd = logAdd + 5;
     end
     % styling
-    for j = 1:numel(ph{i})
-        ph{i}(j).LineWidth = 1.5;
-    end
+    % for j = 1:numel(ph{i})
+    %     ph{i}(j).LineWidth = 1.5;
+    % end
 
-    for j = 1:numel(ph{i}(:,1))
-        ph{i}(j,1).Color = cmap{i}(j,:);
-        ph{i}(j,1).DisplayName = ...
-            samTable{i}.NameVal{j}+" "+samTable{i}.NameUnit{j};
-    end
+    % for j = 1:numel(ph{i}(:,1))
+    %     ph{i}(j,1).Color = cmap{i}(j,:);
+    %     ph{i}(j,1).DisplayName = ...
+    %         samTable{i}.NameVal{j}+" "+samTable{i}.NameUnit{j};
+    % end
     for j = 1:numel(ph{i}(:,2))
-        ph{i}(j,2).Color = cmap{i}(j,:).*[.6 .7 .5].*.8; % adjust factor for brightness
+        ph{i}(j,2).Color = cmap{i}(j,:);
+        ph{i}(j,2).DisplayName = ...
+            samTable{i}.NameVal{j}+" "+samTable{i}.NameUnit{j};
+        ph{i}(j,2).LineWidth = 1.5;
     end
     logAdd = logAdd + 4;
 end
-lh = legend([flip(ph{2}(:,1));flip(ph{1}(:,1))],"location","eastoutside");
+
+pSub = plot(ax,xSub,ySub+9,"k","LineWidth",1.5,"DisplayName","Substrate");
+
+lh = legend([flip(ph{2}(:,2));flip(ph{1}(:,2));pSub],"location","eastoutside");
     lh.Title.String = sprintf("(01.2)-plane\nprobed");
 ylabel("counts (a.u.)")
 xlabel("\phi (°)")
@@ -90,4 +96,10 @@ xlim([-181 181])
 ax.XTick = -180:60:180;
 
 %% export
-exportgraphics(fh,"../Plots/Thesis/1/1_both_phi.eps")
+% exportgraphics(fh,"../Plots/Thesis/1/1_both_phi_oneSub.pdf")
+
+%% Defense export
+
+ax.Position = ax.Position.*[1 1 0 1] + [0 0 10 0];
+delete(lh)
+exportgraphics(fh,"../Plots/Thesis/1/DEF1_both_phi_oneSub.pdf")

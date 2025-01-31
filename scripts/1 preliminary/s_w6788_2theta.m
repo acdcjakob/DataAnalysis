@@ -47,34 +47,37 @@ xlabel(th,"2\theta (°)")
 ylabel(th,"counts (a.u.)")
 
 fh.Renderer = "painters";
+% c-plane
+% X = xline(ax(1),get2Theta([0 0 6],"Al2O3"),"Alpha",1,"Color","r","LineWidth",.5,"HandleVisibility","off");
 exportgraphics(fh,"../Plots/Thesis/1/1_W6788_2theta.eps")
 
-% % zoom 
-% arrayfun(@(x) set(x,"Location","northwest"),l)
-% arrayfun(@(x) set(x,"XGrid","off"),ax)
-% ax(1).XLim = [35 45];
-%     xline(ax(1),get2Theta([0 0 6],"Al2O3","WLa1",41.6097),"--",HandleVisibility="off");
-%     xline(ax(1),get2Theta([0 0 6],"Al2O3","WLa2",41.6097),"--",HandleVisibility="off");
-%     xline(ax(1),get2Theta([0 0 6],"Al2O3","CuKb",41.6097),HandleVisibility="off");
-%     % xline(ax(1),get2Theta([0 0 6],"Al2O3","TaLa2",41.6097),"-.",HandleVisibility="off");
-% ax(2).XLim = [45 55];
-%     xline(ax(2),get2Theta([0 2 4],"Al2O3","WLa1",52.5013),"--",HandleVisibility="off");
-%     xline(ax(2),get2Theta([0 2 4],"Al2O3","WLa2",52.5013),"--",HandleVisibility="off");
-%     xline(ax(2),get2Theta([0 2 4],"Al2O3","CuKb",52.5013),HandleVisibility="off");
-%     % xline(ax(2),get2Theta([0 2 4],"Al2O3","TaLa2",52.5013),"-.",HandleVisibility="off");
-% ax(3).XLim = [60 70];
-%     xline(ax(3),get2Theta([3 0 0],"Al2O3","WLa1",68.164),"--",HandleVisibility="off");
-%     xline(ax(3),get2Theta([3 0 0],"Al2O3","WLa2",68.164),"--",HandleVisibility="off");
-%     xline(ax(3),get2Theta([3 0 0],"Al2O3","CuKb",68.164),HandleVisibility="off");
-%     % xline(ax(3),get2Theta([3 0 0],"Al2O3","TaLa2",68.164),"-.",HandleVisibility="off");
-% ax(4).XLim = [32 40];
-%     xline(ax(4),get2Theta([1 1 0],"Al2O3","WLa1",37.7149),"--",HandleVisibility="off");
-%     xline(ax(4),get2Theta([1 1 0],"Al2O3","WLa2",37.7149),"--",HandleVisibility="off");
-%     xline(ax(4),get2Theta([1 1 0],"Al2O3","CuKb",37.7149),HandleVisibility="off");
-%     % xline(ax(4),get2Theta([1 1 0],"Al2O3","TaLa2",37.7149),"-.",HandleVisibility="off");
-%     ax(4).Legend.Location = "southeast";
+% zoom 
+arrayfun(@(x) set(x,"Location","northwest"),l)
+arrayfun(@(x) set(x,"XGrid","off"),ax)
+set(ax,"XTickMode","auto")
+ax(1).XLim = [35 45];
+    xline(ax(1),get2Theta([0 0 6],"Al2O3","WLa1",41.6097),"--",HandleVisibility="off");
+    xline(ax(1),get2Theta([0 0 6],"Al2O3","WLa2",41.6097),"--",HandleVisibility="off");
+    xline(ax(1),get2Theta([0 0 6],"Al2O3","CuKb",41.6097),HandleVisibility="off");
+    % xline(ax(1),get2Theta([0 0 6],"Al2O3","TaLa2",41.6097),"-.",HandleVisibility="off");
+ax(2).XLim = [45 55];
+    xline(ax(2),get2Theta([0 2 4],"Al2O3","WLa1",52.5013),"--",HandleVisibility="off");
+    xline(ax(2),get2Theta([0 2 4],"Al2O3","WLa2",52.5013),"--",HandleVisibility="off");
+    xline(ax(2),get2Theta([0 2 4],"Al2O3","CuKb",52.5013),HandleVisibility="off");
+    % xline(ax(2),get2Theta([0 2 4],"Al2O3","TaLa2",52.5013),"-.",HandleVisibility="off");
+ax(3).XLim = [60 70];
+    xline(ax(3),get2Theta([3 0 0],"Al2O3","WLa1",68.164),"--",HandleVisibility="off");
+    xline(ax(3),get2Theta([3 0 0],"Al2O3","WLa2",68.164),"--",HandleVisibility="off");
+    xline(ax(3),get2Theta([3 0 0],"Al2O3","CuKb",68.164),HandleVisibility="off");
+    % xline(ax(3),get2Theta([3 0 0],"Al2O3","TaLa2",68.164),"-.",HandleVisibility="off");
+ax(4).XLim = [32 40];
+    xline(ax(4),get2Theta([1 1 0],"Al2O3","WLa1",37.7149),"--",HandleVisibility="off");
+    xline(ax(4),get2Theta([1 1 0],"Al2O3","WLa2",37.7149),"--",HandleVisibility="off");
+    xline(ax(4),get2Theta([1 1 0],"Al2O3","CuKb",37.7149),HandleVisibility="off");
+    % xline(ax(4),get2Theta([1 1 0],"Al2O3","TaLa2",37.7149),"-.",HandleVisibility="off");
+    ax(4).Legend.Location = "southeast";
 
-
+grid(ax(1),"on")
 exportgraphics(fh,"../Plots/Thesis/1/1_W6788_2theta_zoom.eps")
 
 %%

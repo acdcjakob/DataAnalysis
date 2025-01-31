@@ -65,8 +65,12 @@ for i = 1:numel(samTable)
         alpha = -1 * log(data{i}{ii}(:,2)) ...
             ./ (samTable{i}.d(ii)*1e-7); % cm^-1
 
-        tauc = (alpha.*data{i}{ii}(:,1)).^2;
+        %tauc = (alpha.*data{i}{ii}(:,1)).^2;
+        % this is wrong (see thesis, methods chapter on transmission). For
+        % determining E_opt, just use alpha^2 vs. E.
         
+        tauc = (alpha).^2;
+
         colIdx = floor( ...
             rescale( ...
                 samTable{i}.d(ii),...
@@ -79,7 +83,7 @@ for i = 1:numel(samTable)
 
         % Tauc Fit
         x = data{i}{ii}(:,1);
-            x0 = 3.9;
+            x0 = 3.75;
             x1 = 4.3;
             xIdx = x>x0 & x<x1;
         p = polyfit(x(xIdx),tauc(xIdx),1);
@@ -87,7 +91,7 @@ for i = 1:numel(samTable)
             xFit = linspace(Eg,x1+.1,10);
             yFit = polyval(p,xFit);
         
-
+        
         % Plot
         lblTrans = num2str(F(i),'%.2f');
         lblTauc = num2str(Eg,'%.2f');
@@ -106,25 +110,26 @@ end
 xlim(ax(1),[1.5 6])
 
 xlim(ax(2),[1 5.5])
-ylim(ax(2),[0 .6e13])
+ylim(ax(2),[-.1e11 2.5e11])
 
 legH(1) = legend(ax(1),"location","northeast");
     legH(1).Title.String = "{\itF} (J cm^{-2})";
     formatAxes(ax(1));
 legH(2) = legend(ax(2),"location","northwest");
-    legH(2).Title.String = "{\itE_\tau} (eV)";
+    legH(2).Title.String = "{\itE}_{opt} (eV)";
     formatAxes(ax(2));
 
 xlabel(tileH,"{\itE} (eV)")
 
 ylabel(ax(1),"{\itT} (%)")
-ylabel(ax(2),"(\alphaE)^2 (cm^{-1}\times eV)^2")
+ylabel(ax(2),"\alpha^2 (a.u.)")
+set(ax(2),"YTickLabel",{'0' '' '' '' '' '' '' '' '' '' '' })
 
 title(ax(1),"Transmission")
-title(ax(2),"Tauc Plot")
+title(ax(2),"{\itE}_{opt} extrapolation")
 
 grid(ax,"on")
 set(ax(1),"Xminorgrid","on")
-
+%%
 set(fh,"Renderer","painters");
 exportgraphics(fh,"../Plots/Thesis/3/3_lensPos_Transmission.eps");

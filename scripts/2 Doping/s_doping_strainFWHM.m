@@ -50,7 +50,7 @@ markMap = ["s";"s";"^";"o"];
 batchLabel = ["CuO-doped";
     "ZnO-doped (L)";
     "ZnO-doped (H)";
-    "\Theta_{growth} var."];
+    "{\itT}_{heater} var."];
 
 for ii = 1:nP
     axHand(ii) = nexttile(th);
@@ -90,7 +90,7 @@ set(get(th,"XLabel"),...
     "Fontsize",12)
 
 legHand = legend(axHand(1),...
-    'Position',[0.6878    0.1863    0.2740    0.2512]);
+    'Position',[0.6878    0.1863    0.2740    0.28]);
 drawnow
 formatAxes(axHand(1));
 

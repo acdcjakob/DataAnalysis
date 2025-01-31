@@ -33,7 +33,7 @@ pFit = [0.0074    0.5304   15.6129];
 for i = 1:numel(inputL)
     density(i) = P/1000 / (polyval(pFit,inputL(i)*10) / 100); % J / cm^2
     if p.Results.text
-        output(i) = num2str(density(i),"%.2f")+" J/cm^2";
+        output(i) = num2str(density(i),"%.1f")+" J/cm^2";
     else
         output(i) = density(i);
     end

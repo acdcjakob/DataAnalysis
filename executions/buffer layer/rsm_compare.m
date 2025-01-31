@@ -35,14 +35,16 @@ n = 1;
 figure();
 doIt(sample,reflex,plane,lims,n)
 
+%%
 function doIt(sample,reflex,plane,lims,n)
     t = tiledlayout(1,2,"units","centimeters",...
         "TileSpacing","compact",...
         "Padding","tight");
-    
-    [t,f] = makeLatexSize(1,.5,t);
+    disp("start")
+    [t,f] = makeLatexSize(.9,.5,t); % 1 too wide
     
     for i = 1:2
+        disp("plot...")
         ax(i) = nexttile();
         if strcmp(plane,"c")
             SubLit = getSapphireVector([0 0 0],[0 0 6]);
@@ -63,7 +65,8 @@ function doIt(sample,reflex,plane,lims,n)
         h(i) = plotRSM(sample(i),reflex,n,2,M);
 
     end
-
+    
+    disp("export...")
     set(ax,...
         "Linewidth",1,...
         "FontSize",12)
@@ -75,14 +78,16 @@ function doIt(sample,reflex,plane,lims,n)
     axis(lims);
     
     
-    sgtitle(t,plane+"-plane "+char(945)+"-Ga_2O_3 on buffer layer Cr_2O_3",...
+    sgtitle(t,"{\it"+plane+"}-plane",...
         "Fontweight","bold",...
         "Fontsize",12);
     
     xlabel(t,"q_{||} (nm^{-1})")
     ylabel(t,"q_{\perp} (nm^{-1})")
     
-    exportgraphics(f,"_temp/RSM_buffer_"+plane+".png","Resolution",300)
+    % exportgraphics(f,"_temp/RSM_buffer_"+plane+".png","Resolution",300)
+
+    exportgraphics(f,"../Plots/Thesis/4/4_RSM_"+plane+".png","Resolution",300)
 end
 %%
 % 

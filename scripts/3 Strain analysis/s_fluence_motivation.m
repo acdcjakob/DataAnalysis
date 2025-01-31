@@ -49,4 +49,6 @@ ylabel(ax1,"counts (a.u.)")
 xlabel(ax1,"2\theta (°)")
 xlabel(ax2,"\omega (°)")
 
+grid([ax1,ax2],"on")
+
 exportgraphics(fh,"../Plots/Thesis/3/3_fluence_motivation.eps")

@@ -70,5 +70,12 @@ for i = 1:7
 end
 % legend(ax2);
 
+xline(get2Theta([3 0 0],"Cr2O3"),"-r","LineWidth",1,"HandleVisibility","off")
 set(fh,"Renderer","painters")
 % exportgraphics(fh,"../Plots/Thesis/1/1_pressure_2theta.eps")
+
+%% Defense plot
+xlim([62 70])
+ax.Position = ax.Position.*[1 1 0 1] + [0 0 10 0];
+lh.Position = [0.5942    0.2164    0.1761    0.2699];
+exportgraphics(fh,"../Plots/Thesis/1/DEF1_pressure_2theta.pdf")
